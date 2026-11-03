@@ -2,8 +2,7 @@
 
 **Author:** CLAS12 ALERT Calibration Working Group  
 **Date:** October 2026  
-**Project Directory:** `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/gain_calibration_final/`
-
+**Project Directory:** 
 ---
 
 ## 1. Introduction and Physics Motivation
