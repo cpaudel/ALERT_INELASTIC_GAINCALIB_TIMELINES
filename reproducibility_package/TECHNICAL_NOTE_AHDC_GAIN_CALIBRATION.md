@@ -19,8 +19,8 @@ such that after row-level gain correction, refilling the per-wire ADC histograms
 
 ### 2.1 Extracted Track-Associated Hit Tables
 The calibration uses the p0v12 CalibTrain extracted track-hit datasets:
-- **Deuterium ($\text{D}_2$):** `/home/phys_365/cpaudel/NN/TRAINING/26071/D2_ALL_FINAL.csv` (`5,706,742` clean numeric rows across 13 runs `21657–21768`; `5,706,738` rows with $\text{ADC} > 0$).
-- **Helium-4 ($^4\text{He}$):** `/home/phys_365/cpaudel/NN/TRAINING/26071/He4_ALL_FINAL.csv` (`5,408,305` clean numeric rows across 25 runs `21459–21782`; `5,408,304` rows with $\text{ADC} > 0$).
+- **Deuterium ($\text{D}_2$):** `D2_ALL_FINAL.csv` (`5,706,742` clean numeric rows across 13 runs `21657–21768`; `5,706,738` rows with $\text{ADC} > 0$).
+- **Helium-4 ($^4\text{He}$):** `He4_ALL_FINAL.csv` (`5,408,305` clean numeric rows across 25 runs `21459–21782`; `5,408,304` rows with $\text{ADC} > 0$).
 
 Each row corresponds to an AHDC sense-wire hit associated with a reconstructed proton track (`pid == 2212`, `prob_2212 >= 0.238`, `clusterid >= 0`, `nhits >= 8`, $\chi^2 \le 50$, $0.02 < p \le 0.60\text{ GeV}/c$, `wfType` $\in \{0,1,2\}$, $300 \le \text{ToT} \le 750\text{ ns}$).
 
