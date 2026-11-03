@@ -1,6 +1,5 @@
 # CLAS12 ALERT AHDC Gain Calibration — Reproducibility Package
 
-**Location:** `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/reproducibility_package/`
 
 **Purpose:** This directory contains all files needed to reproduce the complete CLAS12 ALERT AHDC per-wire ADC gain calibration study. 
 Anyone can checkout this directory and run the scripts to regenerate all results, plots, and tables from the raw CSV datasets.
