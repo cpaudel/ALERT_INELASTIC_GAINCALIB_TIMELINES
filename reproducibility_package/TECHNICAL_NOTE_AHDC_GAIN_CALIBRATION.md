@@ -116,7 +116,7 @@ The analysis pipeline is modularized into five standalone Python scripts in `res
 
 To reproduce the entire study from scratch without touching HIPO files:
 ```bash
-cd /home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/gain_calibration_final
+
 python3 scripts/01_phase1_phase2_audit.py
 python3 scripts/02_phase2_phase3_qa_plots.py
 python3 scripts/03_run_full_calibration.py
