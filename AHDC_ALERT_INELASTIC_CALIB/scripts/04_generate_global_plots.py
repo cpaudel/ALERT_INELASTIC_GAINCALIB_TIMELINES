@@ -4,6 +4,7 @@ Phase 9-12: Generate Publication-Quality Global Plots for Gains, Option A vs Opt
 True Second-Pass Closure, and D2-vs-He4 Cross-Calibration Comparison.
 """
 
+import os
 import numpy as np
 import pandas as pd
 import matplotlib
@@ -21,7 +22,8 @@ plt.rcParams.update({
     "figure.dpi": 150,
 })
 
-BASE_DIR = Path("/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12")
+WORKSPACE = Path(os.environ.get("ALERT_WORKSPACE", "<DEFAULT_WORKSPACE>"))
+BASE_DIR = WORKSPACE / "ALERT_AHDC_GAIN_CALIBRATION_CLAS12"
 OUT_DIR = BASE_DIR / "results" / "gain_calibration_final"
 TABLE_DIR = OUT_DIR / "tables"
 GAIN_PLOT_DIR = OUT_DIR / "plots" / "gains"

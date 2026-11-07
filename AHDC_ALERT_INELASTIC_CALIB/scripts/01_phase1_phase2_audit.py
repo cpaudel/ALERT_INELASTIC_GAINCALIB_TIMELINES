@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
-import pandas as pd
-import numpy as np
+import os
 from pathlib import Path
 
-BASE = Path("/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12")
+WORKSPACE = Path(os.environ.get("ALERT_WORKSPACE", "<DEFAULT_WORKSPACE>"))
+BASE = WORKSPACE / "ALERT_AHDC_GAIN_CALIBRATION_CLAS12"
 D2_PATH = BASE / "FINAL_MERGED/D2_ALL_FINAL.csv"
 HE4_PATH = BASE / "FINAL_MERGED/HE4_ALL_FINAL.csv"
 TAB_DIR = BASE / "results/gain_calibration_final/tables"

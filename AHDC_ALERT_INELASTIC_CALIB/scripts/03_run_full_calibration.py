@@ -5,13 +5,15 @@ Evaluation, True Row-Level Second-Pass Closure Refit, D2-vs-He4 Cross-Check, and
 Generation of All Required Summary CSV Tables.
 """
 
+import os
 import numpy as np
 import pandas as pd
 from scipy.optimize import curve_fit
 from scipy.ndimage import gaussian_filter1d
 from pathlib import Path
 
-BASE_DIR = Path("/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12")
+WORKSPACE = Path(os.environ.get("ALERT_WORKSPACE", "<DEFAULT_WORKSPACE>"))
+BASE_DIR = WORKSPACE / "ALERT_AHDC_GAIN_CALIBRATION_CLAS12"
 OUT_DIR = BASE_DIR / "results" / "gain_calibration_final"
 TABLE_DIR = OUT_DIR / "tables"
 TABLE_DIR.mkdir(parents=True, exist_ok=True)

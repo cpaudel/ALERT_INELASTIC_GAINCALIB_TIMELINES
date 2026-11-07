@@ -27,14 +27,14 @@ from matplotlib.backends.backend_pdf import PdfPages
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
-BASE_DIR = Path("/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12")
-OUT_DIR = BASE_DIR / "results" / "gain_calibration_final"
+WORKSPACE = Path(os.environ.get("ALERT_WORKSPACE", "<DEFAULT_WORKSPACE>"))
+OUT_DIR = WORKSPACE / "results" / "gain_calibration_final"
 TABLE_DIR = OUT_DIR / "tables"
 PER_WIRE_DIR = OUT_DIR / "plots" / "per_wire"
 QA_DIR = PER_WIRE_DIR / "qa"
 
-D2_CSV = BASE_DIR / "FINAL_MERGED" / "D2_ALL_FINAL.csv"
-HE4_CSV = BASE_DIR / "FINAL_MERGED" / "HE4_ALL_FINAL.csv"
+D2_CSV = WORKSPACE / "FINAL_MERGED" / "D2_ALL_FINAL.csv"
+HE4_CSV = WORKSPACE / "FINAL_MERGED" / "HE4_ALL_FINAL.csv"
 
 P_MIN_GEV = 0.15
 P_MAX_GEV = 0.25

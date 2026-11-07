@@ -1,7 +1,7 @@
 # CLAS12 ALERT AHDC Per-Wire ADC Gain Calibration — Final Analysis Report & Technical Note
 
-**Workspace:** `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12`  
-**Output Root:** `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/gain_calibration_final/`  
+**Workspace:** `<WORKSPACE_ROOT>`  
+**Output Root:** `<WORKSPACE_ROOT>/results/gain_calibration_final/`  
 **Datasets Analyzed:**
 - `D2_ALL_FINAL.csv` (`5,706,742` valid numeric hit rows across `13` runs `21657–21768`, `2,163` files, `633,355` events; `5,706,738` rows with `ADC > 0`)
 - `He4_ALL_FINAL.csv` (`5,408,305` valid numeric hit rows across `25` runs `21459–21782`, `2,693` files, `597,438` events; `5,408,304` rows with `ADC > 0`)
@@ -11,8 +11,8 @@
 ## Part I: Mandatory 17-Item Checkpoint Report
 
 1. **Exact CSV paths used:**
-   - Primary D2 CSV: `/home/phys_365/cpaudel/NN/TRAINING/26071/D2_ALL_FINAL.csv` (`895 MB`), linked into the project workspace at `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/FINAL_MERGED/D2_ALL_FINAL.csv`.
-   - Primary He4 CSV: `/home/phys_365/cpaudel/NN/TRAINING/26071/He4_ALL_FINAL.csv` (`733 MB`), linked into the project workspace at `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/FINAL_MERGED/HE4_ALL_FINAL.csv`.
+   - Primary D2 CSV: `<DATA_DIR>/D2_ALL_FINAL.csv` (`895 MB`), linked into the project workspace at `<WORKSPACE_ROOT>/FINAL_MERGED/D2_ALL_FINAL.csv`.
+   - Primary He4 CSV: `<DATA_DIR>/He4_ALL_FINAL.csv` (`733 MB`), linked into the project workspace at `<WORKSPACE_ROOT>/FINAL_MERGED/HE4_ALL_FINAL.csv`.
 2. **Exact CSV column list:**
    - All 22 columns in order: `file_index, file, event_index, run, event, trackid, clusterid, pid, prob_2212, p_GeV, dEdx, nhits, chi2, superlayer, local_layer, raw_layer, wire, adc_sector, adc_order, wfType, ToT, ADC`.
 3. **Total row count for D2 and He4:**
@@ -107,7 +107,7 @@
         - `3` channels with hardware `MPV_OUTLIER` (collapsed low-ADC noise floor in both datasets): `#254 L32 W23` ($\text{med ADC} = 68$), `#278 L32 W47` ($\text{med ADC} = 97$), `#364 L41 W61` ($\text{med ADC} = 53$).
         - `23` channels where He4 had `UNSTABLE`/`MPV_BOUNDARY_HIT`/`WIDTH_BOUNDARY_HIT` and D2 was uncalibrated (`NO_DATA`/`LOW_STAT`/`UNSTABLE`).
 16. **Exact Output File Paths for All PDFs, Plots, Tables, Scripts, and Report:**
-    - Documented in Section III below (all verified on disk under `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/gain_calibration_final/`).
+    - Documented in Section III below (all verified on disk under `<WORKSPACE_ROOT>/results/gain_calibration_final/`).
 17. **Final Recommended Calibration Strategy:**
     - Deploy `tables/gain_constants_final.csv` (`recommended_gain_optA` for uniform detector-wide ADC normalization to `MPV_ref`, or `recommended_gain_optB` if reconstruction applies an independent layer cell-size normalization).
     - Because 87 azimuthal sector wires were masked in DAQ starting at run `21552` and 14–39 front-end channels experienced preamplifier attenuation/gain shifts between early He4 runs (`21459–21536`) and late D2/He4 runs (`21552–21782`), **CCDB run-range splitting** is recommended:
@@ -164,7 +164,7 @@
 
 ## Part III: Complete Inventory of Generated Deliverables
 
-All deliverables are stored in `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/gain_calibration_final/`:
+All deliverables are stored in `<WORKSPACE_ROOT>/results/gain_calibration_final/`:
 
 ### 1. Reproducible Analysis Scripts (`scripts/`)
 - `scripts/01_phase1_phase2_audit.py` — Data integrity audit, 576-channel mapping verification, and 14-window momentum scan.

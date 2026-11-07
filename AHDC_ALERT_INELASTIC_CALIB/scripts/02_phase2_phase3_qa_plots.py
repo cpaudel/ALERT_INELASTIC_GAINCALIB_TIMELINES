@@ -7,15 +7,17 @@ independently (linear and log scales where informative), channel statistics
 heatmaps across candidate momentum windows, and ADC spectral shape comparisons
 across momentum windows.
 """
-import numpy as np
+import os
 import pandas as pd
+import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.colors import LogNorm
 from pathlib import Path
 
-BASE = Path("/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12")
+WORKSPACE = Path(os.environ.get("ALERT_WORKSPACE", "<DEFAULT_WORKSPACE>"))
+BASE = WORKSPACE / "ALERT_AHDC_GAIN_CALIBRATION_CLAS12"
 D2_PATH = BASE / "FINAL_MERGED/D2_ALL_FINAL.csv"
 HE4_PATH = BASE / "FINAL_MERGED/HE4_ALL_FINAL.csv"
 OUT_BASE = BASE / "results/gain_calibration_final"

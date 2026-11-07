@@ -41,15 +41,15 @@ The raw CSV datasets are **not** included in this package due to their large siz
 
 | File | Path | Size | Description |
 |------|------|------|-------------|
-| `D2_ALL_FINAL.csv` | `/home/phys_365/cpaudel/NN/TRAINING/26071/D2_ALL_FINAL.csv` | ~895 MB | Primary D2 extracted CSV dataset |
-| `HE4_ALL_FINAL.csv` | `/home/phys_365/cpaudel/NN/TRAINING/26071/He4_ALL_FINAL.csv` | ~733 MB | Primary He4 extracted CSV dataset |
+| `D2_ALL_FINAL.csv` | `<DATA_DIR>/D2_ALL_FINAL.csv` | ~895 MB | Primary D2 extracted CSV dataset |
+| `HE4_ALL_FINAL.csv` | `<DATA_DIR>/He4_ALL_FINAL.csv` | ~733 MB | Primary He4 extracted CSV dataset |
 
 **Symlinked paths (alternative locations, already set up in the workspace):**
 
 | Symlink | Target | Description |
 |---------|--------|-------------|
-| `FINAL_MERGED/D2_ALL_FINAL.csv` | `../26071/D2_ALL_FINAL.csv` | Convenience symlink |
-| `FINAL_MERGED/HE4_ALL_FINAL.csv` | `../26071/He4_ALL_FINAL.csv` | Convenience symlink |
+| `FINAL_MERGED/D2_ALL_FINAL.csv` | `<DATA_DIR>/D2_ALL_FINAL.csv` | Convenience symlink |
+| `FINAL_MERGED/HE4_ALL_FINAL.csv` | `<DATA_DIR>/He4_ALL_FINAL.csv` | Convenience symlink |
 
 **In the just-completed workspace**, the scripts expect the CSVs at:
 
@@ -58,14 +58,14 @@ BASE_DIR / "FINAL_MERGED" / "D2_ALL_FINAL.csv"
 BASE_DIR / "FINAL_MERGED" / "HE4_ALL_FINAL.csv"
 ```
 
-where `BASE_DIR = /home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12`.
+where `BASE_DIR = <WORKSPACE_ROOT>`.
 
 To make the scripts work from the reproducibility package, either:
 1. Keep the CSVs at the above paths, **or**
 2. Create symlinks inside the reproducibility package:
    ```bash
-   ln -s /home/phys_365/cpaudel/NN/TRAINING/26071/D2_ALL_FINAL.csv ./FINAL_MERGED/D2_ALL_FINAL.csv
-   ln -s /home/phys_365/cpaudel/NN/TRAINING/26071/He4_ALL_FINAL.csv ./FINAL_MERGED/HE4_ALL_FINAL.csv
+   ln -s <DATA_DIR>/D2_ALL_FINAL.csv ./FINAL_MERGED/D2_ALL_FINAL.csv
+   ln -s <DATA_DIR>/He4_ALL_FINAL.csv ./FINAL_MERGED/HE4_ALL_FINAL.csv
    ```
 
 ---
@@ -75,7 +75,7 @@ To make the scripts work from the reproducibility package, either:
 All results can be regenerated from scratch by running the five analysis scripts in order:
 
 ```bash
-cd /home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/results/reproducibility_package
+cd <WORKSPACE_ROOT>/results/reproducibility_package
 
 # Step 1: Data audit, mapping, and momentum window statistics
 python3 scripts/01_phase1_phase2_audit.py
@@ -140,4 +140,4 @@ python3 scripts/05_generate_per_wire_qa_package.py
 
 - Python 3.9+
 - `numpy`, `pandas`, `scipy`, `matplotlib`, `scipy.optimize.curve_fit`
-- Scripts tested on the just-completed workspace at `/home/phys_365/cpaudel/NN/TRAINING/ALERT_AHDC_GAIN_CALIBRATION_CLAS12/`
+- Scripts tested on the just-completed workspace at `<WORKSPACE_ROOT>/`
