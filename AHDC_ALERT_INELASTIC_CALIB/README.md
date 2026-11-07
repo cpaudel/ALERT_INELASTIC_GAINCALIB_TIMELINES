@@ -1,4 +1,4 @@
-# CLAS12 ALERT AHDC Gain Calibration — Reproducibility Package
+# CLAS12 ALERT AHDC Gain Calibration
 
 
 **Purpose:** This directory contains all files needed to reproduce the complete CLAS12 ALERT AHDC per-wire ADC gain calibration study. 
